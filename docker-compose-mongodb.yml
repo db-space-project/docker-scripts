@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  db-space-mongo:
+    image: mongo
+    container_name: "db-space-mongo"
+    environment:
+      - MONGODB_USER="admin"
+      - MONGODB_PASS="secret"
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - 27017:27017
